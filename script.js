@@ -21,7 +21,9 @@ const burstContainer = document.getElementById("burstContainer");
 let userName = "";
 
 let currentQuestion = 0;
+let answers = [];
 
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbxVEXjjAdNi3GwfDOWRmWPkn7i6rmxRvrYbzPkX__dKCrzaINvbvc5fx4trgMtrMO93/exec";
 let noClickCount = 0;
 
 // =====================================
@@ -149,8 +151,13 @@ function showQuestion() {
     `;
 
     document
-        .getElementById("yesBtn")
-        .onclick = nextQuestion;
+       document.getElementById("yesBtn").onclick = () => {
+
+    answers[currentQuestion] = "Yes";
+
+    nextQuestion();
+
+};
 
     document
         .getElementById("noBtn")
@@ -183,10 +190,12 @@ function nextQuestion() {
 // NO BUTTON
 // =====================================
 
+
+
 function noClicked() {
 
     const q = CONFIG.questions[currentQuestion];
-
+answers[currentQuestion] = "No";
     noClickCount++;
 popupSound.pause();
 popupSound.currentTime = 0;
@@ -212,9 +221,7 @@ popupOverlay.classList.add("hidden");
         moveNoButton(noBtn);
 
     }
-
 }
-
 // =====================================
 // MOVE NO BUTTON
 // =====================================
@@ -337,7 +344,7 @@ function createHeart() {
 // =====================================
 
 function showFinalScreen() {
-
+sendAnswersToSheet();
     document.body.className = "red";
 
     screen.innerHTML = `
@@ -1073,4 +1080,37 @@ if (popupBtn) {
         clickSound.currentTime = 0;
         clickSound.play().catch(() => {});
     };
+}
+function sendAnswersToSheet() {
+
+    fetch(SHEET_URL, {
+
+        method: "POST",
+
+        mode: "no-cors",
+
+        headers: {
+            "Content-Type": "text/plain"
+        },
+
+        body: JSON.stringify({
+
+            name: userName,
+
+            q1: answers[0] || "",
+
+            q2: answers[1] || "",
+
+            q3: answers[2] || "",
+
+            q4: answers[3] || "",
+
+            q5: answers[4] || "",
+
+            q6: answers[5] || ""
+
+        })
+
+    });
+
 }
