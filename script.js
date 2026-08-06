@@ -1081,34 +1081,8 @@ if (popupBtn) {
         clickSound.play().catch(() => {});
     };
 }
-function sendAnswersToSheet() {
 
-    fetch(SHEET_URL, {
-
-        method: "POST",
-
-        mode: "no-cors",
-
-        headers: {
-            "Content-Type": "text/plain"
-        },
-
-        body: JSON.stringify({
-
-            name: userName,
-
-            q1: answers[0] || "",
-
-            q2: answers[1] || "",
-
-            q3: answers[2] || "",
-
-            q4: answers[3] || "",
-
-            q5: answers[4] || "",
-
-            q6: answers[5] || ""
-
+         
         })
         
 
