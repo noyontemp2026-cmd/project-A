@@ -1110,6 +1110,9 @@ function sendAnswersToSheet() {
             q6: answers[5] || ""
 
         })
+            });
+
+}
 
     });
 
