@@ -1112,6 +1112,4 @@ function sendAnswersToSheet() {
         })
             });
 
-}
-    })
 
