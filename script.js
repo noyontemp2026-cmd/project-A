@@ -344,7 +344,7 @@ function createHeart() {
 // =====================================
 
 function showFinalScreen() {
-sendAnswersToSheet();
+
     document.body.className = "red";
 
     screen.innerHTML = `
