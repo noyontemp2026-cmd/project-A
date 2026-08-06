@@ -1113,7 +1113,5 @@ function sendAnswersToSheet() {
             });
 
 }
+    })
 
-    });
-
-}
