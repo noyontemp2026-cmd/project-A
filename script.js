@@ -150,7 +150,7 @@ function showQuestion() {
 
     `;
 
-    document
+    
        document.getElementById("yesBtn").onclick = () => {
 
     answers[currentQuestion] = "Yes";
@@ -159,9 +159,7 @@ function showQuestion() {
 
 };
 
-    document
-        .getElementById("noBtn")
-        .onclick = noClicked;
+ document.getElementById("noBtn").onclick = noClicked;
 
 }
 // =====================================
