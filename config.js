@@ -25,11 +25,7 @@ const CONFIG = {
 
 Hi {name}
 
-jani nh adow amr moner kotha bujhba ki nh bt ami sotti tmk onk vlo basi.prai 13hour + somoi diye banailm.
-just tmk impress korar jnno.tmr mon joy korar jnno.❤️ i love u {name}
-ami tmk onk happy rakhbo {name},.ekta bar just amr hoie dekho.
- tmk chara kisui vlo lge nh.always i think about you.plzzz amr hoie jaw plzzz {name}
-amr hole ki emn khoti hbe tmr bolo.ami ki vlo chele nh ektato ontoto sujug daw amk
+kissu nai
 `,
 noTexts:[
 
